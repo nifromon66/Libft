@@ -117,4 +117,23 @@
 >		- Prototype : `void	*ft_memchr(const void *s, int c, size_t n);`
 >		- Description : It scans the initial 'n' bytes of memory area pointed to by 's' for the first instance of 'c'. Both 'c' and the bytes of memory area pointed to by 's' are interpreted as unsigned char.
 >		- Allowed external functions : None.
->		- Return Value : It returns 
+>		- Return Value : It returns a pointer to the matching byte or NULL if the character does not occure in the given memory area.
+>	- **ft_memcmp** :
+>		- Prototype : `int	ft_memcmp(const void *s1, const void *s2, size_t n);`
+>		- Description : It compares the first 'n' bytes (each interpreted as unsigned char) of the memory areas 's1' and 's2'.
+>		- Allowed external functions : None.
+>		- Return Value : It returns an integer less than, equal to, or greater than zero if the first n bytes of s1 is found, respectively, to be less than, to match, or be greater than the first n bytes of s2. For a nonzero return value, the sign is determined by the sign of the difference between the first pair of bytes (interpreted as unsigned char) that differ in s1 and s2. If n is zero, the return value is zero.
+>	- **ft_calloc** :
+>		- Prototype : `void	*ft_calloc(size_t nmemb, size_t size);`
+>		- Description : It shall allocate unused space for an array of nmemb elements each of whose size in bytes is size.  The space shall be initialized to all bits 0.
+>		- Allowed external functions : malloc() {stdlib.h}.
+>		- Return Value : Upon successfull completion with both nmemb and size non-zero, shall return a pointer to the allocated space. If either nmemb or size is 0, then either : A null pointer shall be returned and errno may be set to an implementation defined value or A pointer to the allocated space shall be returned. The application shall ensure that the pointer is not used to access an object. Otherwise it shall return a null pointer and set errno to indicate an error.
+>	- **ft_strdup** :
+>		- Prototype : `char	*ft_strdup(const char *s);`
+>		- Description : It shall duplicate the string 's', memory for the new string is obtained with malloc() and can be freed with free().
+>		- Allowed external functions : malloc() {stdlib.h}.
+>		- Return Value : Upon succes, it shall returns a pointer to the duplicated string. It returns NULL if insufficient memory was avaible, with errno set to indicate an error.
+> ---
+>  - ### Part 2 - Additional functions
+> 
+
