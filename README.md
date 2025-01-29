@@ -12,7 +12,7 @@
 > - Libft allowed : n/a.
 > ---
 > - ### Part 1 - Libc functions
->		In this first part, we must recode a group of functions of the "libc" library as described in there respective manual pages. Our functions must have the exact same prototype, the same behavior and the same return values as the originals. The only difference will be that they must be prefixed by "ft_" and will be coded our way.
+>	In this first part, we must recode a group of functions of the "libc" library as described in there respective manual pages. Our functions must have the exact same prototype, the same behavior and the same return values as the originals. The only difference will be that they must be prefixed by "ft_" and will be coded our way.
 >	#### Functions :
 >	##### Character classification functions :
 >	- **ft_isalpha** :
@@ -135,5 +135,5 @@
 >		- Return Value : Upon succes, it shall returns a pointer to the duplicated string. It returns NULL if insufficient memory was avaible, with errno set to indicate an error.
 > ---
 >  - ### Part 2 - Additional functions
-> 
+>
 
