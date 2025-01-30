@@ -205,9 +205,9 @@
 >	 We will use the following structure to represent the nodes of our list, it's declaration is to add to your libft.h file.
 >	 The members of the t_list structure are :
 >
->	 void *content : Permet de stocker n'importe quel type de donnee dans les maillons.
+>	 void *content : Allow us to stock any kind of data inside our nodes.
 >
->	 struct s_list *next : L'adresse du maillon suivant de la list, ou NULL si le maillon suivant est le dernier.
+>	 struct s_list *next : The adress to the next node of the linked list, can be put to NULL if it's the last element of the linked list.
 >    #### Functions :
-> 
+>
 >
