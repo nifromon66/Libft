@@ -99,7 +99,7 @@
 >		- Allowed external functions : None.
 >		- Return Value : it returns a pointer to the memory area of 's'.
 >	- **ft_bzero** :
->		- Prototype : void	ft_bzero(void *s, size_t n);`
+>		- Prototype : `void	ft_bzero(void *s, size_t n);`
 >		- Description : It erases the data in the 'n' bytes of the memory area startig at the location pointed to by 's', by writing zeros ('\0') to that area.
 >		- Allowed external functions : None.
 >		- Return Value : None.
@@ -133,7 +133,81 @@
 >		- Description : It shall duplicate the string 's', memory for the new string is obtained with malloc() and can be freed with free().
 >		- Allowed external functions : malloc() {stdlib.h}.
 >		- Return Value : Upon succes, it shall returns a pointer to the duplicated string. It returns NULL if insufficient memory was avaible, with errno set to indicate an error.
-> ---
->  - ### Part 2 - Additional functions
 >
-
+> ---
+>
+>  - ### Part 2 - Additional functions
+>	 In this second part, we must recode a group of functions that is not necessarily part of the libc library.
+>	 #### Functions :
+>	 ##### String Manipulation functions :
+>	 - **ft_substr** :
+>		 - Prototype : `char *ft_substr(char const *s, unsigned int start, size_t len);`
+>		 - Description : Extract a sub_string from the string pointed to by 's' which start at the 'start' index with a maximum size of 'len'.
+>		 - Allowed external functions : malloc() {stdlib.h}
+>		 - Return Value : The new string extracted from 's' or NULL if the allocation fails.
+>	 - **ft_strjoin** :
+>		 - Prototype : `char *ft_strjoin(char const *s1, char const *s2);`
+>		 - Description : Concatenate the two string 's1' and 's2' in new string allocated with malloc().
+>		 - Allowed external functions : malloc() {stdlib.h}
+>		 - Return Value : The new string created from the concatenation of 's1' and 's2' or NULL if the allocation fails.
+>	 - **ft_strtrim** :
+>		 - Prototype : `char *ft_strtrim(char const *s1, char const *set);`
+>		 - Description : Trim the specified 'set' of characters from the 's1' string at the start and the end of the string. And allocate with malloc() to create the new string
+>		 - Allowed external functions : malloc() {stdlib.h}
+>		 - Return Value : The new string created from trimming 's1' from the characters found in 'set' at the start and end. Or NULL if the allocation failed.
+>	 - **ft_split** :
+>		 - Prototype : `char **ft_split(char const *s, char c);`
+>		 - Description : It split the string 's' at the location specified from 'c' to create new strings.
+>		 - Allowed external functions : malloc(), free() {stdlib.h}
+>		 - Return Value : An array of string containing each string created from spliting the string 's' with 'c'. Or NULL if the allocation failed
+>	 ##### Convertion functions :
+>	 - **ft_itoa** :
+>		 - Prototype : `char *ft_itoa(int n);`
+>		 - Description : It converts the 'n' number to a string corresponding to 'n'.
+>		 - Allowed external functions : malloc() {stdlib.h}
+>		 - Return Value : It returns a string corresponding to int 'n'. or NULL if the memory allocation failed.
+>	 ##### Function pointer functions :
+>	 - **ft_strmapi** :
+>		 - Prototype : `char *ft_strmapi(char const *s, char (*f)(unsigned int, char));`
+>		 - Description : Apply the 'f' function to each character of the string pointed to by 's', passing it's index as first argument and the character itself as second argument. Which creates a new string resulting from the successive application of 'f'.
+>		 - Allowed external functions : malloc() {stdlib.h}
+>		 - Return Value : It returns the string created from successively applying 'f' to each character of string 's'. Or NULL if the memory allocation failed.
+>	 - **ft_striteri** :
+>		 - Prototype : `void ft_striteri(char *s, void (*f)(unsigned int, char*));`
+>		 - Description : Apply the 'f' function to each character of the string pointed to by 's', passing it's index as first argument and the pointer to the character itself as second argument.
+>		 - Allowed external functions : None
+>		 - Return Value : None
+>	 ##### Print on file descriptor functions :
+>	 - **ft_putchar_fd** :
+>		 - Prototype : `void ft_putchar_fd(char c, int fd);`
+>		 - Description : Print the 'c' character on the 'fd' file descriptor.
+>		 - Allowed external functions : write(), {unistd.h}
+>		 - Return Value : None
+>	 - **ft_putstr_fd** :
+>		 - Prototype : `void ft_putstr_fd(char *s, int fd);`
+>		 - Description : Print the 's' string on the 'fd' file descriptor.
+>		 - Allowed external functions : write(), {unistd.h}
+>		 - Return Value : None
+>	 - **ft_putendl_fd** :
+>		 - Prototype : `void ft_putendl_fd(char *s, int fd);`
+>		 - Description : Print the 's' string on the 'fd' file descriptor followed by a newline.
+>		 - Allowed external functions : write(), {unistd.h}
+>		 - Return Value : None
+>	 - **ft_putnbr_fd** :
+>		 - Prototype : `void ft_putnbr_fd(int n, int fd);`
+>		 - Description : Print the 'n' integer on the 'fd' file descriptor.
+>		 - Allowed external functions : write(), {unistd.h}
+>		 - Return Value : None
+>
+> ---
+>
+> - ### Bonus part - Linked list functions :
+>	 We will use the following structure to represent the nodes of our list, it's declaration is to add to your libft.h file.
+>	 The members of the t_list structure are :
+>
+>	 void *content : Permet de stocker n'importe quel type de donnee dans les maillons.
+>
+>	 struct s_list *next : L'adresse du maillon suivant de la list, ou NULL si le maillon suivant est le dernier.
+>    #### Functions :
+> 
+>
