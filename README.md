@@ -8,7 +8,7 @@ By nifromon (Nicolas Fromont), student at 42 perpignan, France.
 >
 > ---
 > ## INSTRUCTIONS
-> - Program name : libft.a ;
+> - Program name : libft.a .
 > - Files to return : Makefile, libft.h, ft_*.c.
 > - Makefile rules : NAME, all, clean, fclean, re.
 > - Allowed external functions : See details below.
