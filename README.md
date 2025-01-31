@@ -1,6 +1,9 @@
 # LIBFT
+By nifromon ( student at 42 perpignan, France).
+> ---
 >
 > ## DESCRIPTION
+> 
 > This project's goal was for us to create in C our own library of generic functions that we could use in our future projects at 42. Coding in C is quite laborious, imagine how hard it would be if we didn't have access to all those small but extremely pratical functions. That's why we must begin our cursus at 42 by creating our own library - Which we will be free to enrich as we go trough the cursus as long as we respect the rules.
 >
 > ---
@@ -205,9 +208,55 @@
 >	 We will use the following structure to represent the nodes of our list, it's declaration is to add to your libft.h file.
 >	 The members of the t_list structure are :
 >
->	 void *content : Allow us to stock any kind of data inside our nodes.
+>    `void *content` : Allow us to stock any kind of data inside our nodes.
 >
->	 struct s_list *next : The adress to the next node of the linked list, can be put to NULL if it's the last element of the linked list.
+>    `struct s_list *next` : The adress to the next node of the linked list, can be put to NULL if it's the last element of the linked list.
 >    #### Functions :
->
->
+>    ##### Linked list manipulation functions :
+>    - **ft_lstnew** :
+>        - Prototype : `t_list	*ft_lstnew(void *content);`
+>        - Description : It creates a new node which put content to the value of the 'content' variable with a malloc(), and then put the pointer to the next node to NULL.
+>        - Allowed external functions : malloc(), {stdlib.h}.
+>        - Return Value : The new node.
+>    - **ft_lstadd_front** :
+>        - Prototype : `void	ft_lstadd_front(t_list **lst, t_list *new);`
+>        - Description : Add the 'new' element at the start of the linked list pointed to by 'lst'.
+>        - Allowed external functions : None.
+>        - Return Value : None.
+>    - **ft_lstsize** :
+>        - Prototype : `int	ft_lstsize(t_list *lst);`
+>        - Description : Calculate the number of elements in the list pointed to by 'lst'.
+>        - Allowed external functions : None.
+>        - Return Value : The size of the list.
+>    - **ft_lstlast** :
+>        - Prototype : `t_list	*ft_lstlast(t_list *lst);`
+>        - Description : Find the last element of the linked list pointed to by 'lst'.
+>        - Allowed external functions : None.
+>        - Return Value : The last element of the linked list.
+>    - **ft_lstadd_front** :
+>        - Prototype : `void	ft_lstadd_back(t_list **lst, t_list *new);`
+>        - Description : Add the 'new' element at the end of the linked list pointed to by 'lst'.
+>        - Allowed external functions : None.
+>        - Return Value : None.
+>    ##### Linked list manipulation functions with function pointer :
+>    - **ft_lstdelone** :
+>        - Prototype : `void	ft_lstdelone(t_list *lst, void (*del)(void *));`
+>        - Description : Delete and free the memory of the element pointed to by 'lst' with the help of 'del' function pointer and free(). Then the pointer is put to NULL.
+>        - Allowed external functions : free(), {stdlib.h}.
+>        - Return Value : None.
+>    - **ft_lstclear** :
+>        - Prototype : `void	ft_lstclear(t_list **lst, void (*del)(void *));`
+>        - Description : Delete and free the memory of the element pointed to by 'lst' and all the following elements with the help of 'del' function pointer and free(). Then the pointer is put to NULL.
+>        - Allowed external functions : free(), {stdlib.h}.
+>        - Return Value : None.
+>    - **ft_lstiter** :
+>        - Prototype : `void	ft_lstiter(t_list *lst, void (*f)(void *));`
+>        - Description : Iterate on the linked list pointed to by 'lst' and apply the pointer of function 'f' on the content of each node of the list.
+>        - Allowed external functions : None.
+>        - Return Value : None.
+>    - **ft_lstmap** :
+>        - Prototype : `t_list	*ft_lstiter(t_list *lst, void (*f)(void *), void (*del)(void *));`
+>        - Description : Iterate on the linked list pointed to by 'lst' and apply the function pointer 'f' to the content of each node, and then creates a new list based on the result of the successive application of the function 'f'. The 'del' function pointer is here in case deleting an element become necessary.
+>        - Allowed external functions : malloc(), free(), {stdlib.h}.
+>        - Return Value : The new list, or NULL if the memory allocation failed.
+> ---
