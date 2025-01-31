@@ -249,13 +249,13 @@ By nifromon ( student at 42 perpignan, France).
 >        - Description : Delete and free the memory of the element pointed to by 'lst' and all the following elements with the help of 'del' function pointer and free(). Then the pointer is put to NULL.
 >        - Allowed external functions : free(), {stdlib.h}.
 >        - Return Value : None.
->    - **[ft_isalpha](libft/src/ft_isalpha.c)** :
+>    - **[ft_lstiter](libft/src/ft_lstiter.c)** :
 >        - Prototype : `void	ft_lstiter(t_list *lst, void (*f)(void *));`
 >        - Description : Iterate on the linked list pointed to by 'lst' and apply the pointer of function 'f' on the content of each node of the list.
 >        - Allowed external functions : None.
 >        - Return Value : None.
->    - **ft_lstmap** :
->        - Prototype : `t_list	*ft_lstiter(t_list *lst, void (*f)(void *), void (*del)(void *));`
+>    - **[ft_lstmap](libft/src/ft_lstmap.c)** :
+>        - Prototype : `t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *));`
 >        - Description : Iterate on the linked list pointed to by 'lst' and apply the function pointer 'f' to the content of each node, and then creates a new list based on the result of the successive application of the function 'f'. The 'del' function pointer is here in case deleting an element become necessary.
 >        - Allowed external functions : malloc(), free(), {stdlib.h}.
 >        - Return Value : The new list, or NULL if the memory allocation failed.
