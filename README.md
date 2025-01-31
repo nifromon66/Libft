@@ -1,5 +1,5 @@
 # LIBFT
-By nifromon ( student at 42 perpignan, France).
+By nifromon (Nicolas Fromont), student at 42 perpignan, France.
 > ---
 >
 > ## DESCRIPTION
